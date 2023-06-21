@@ -11,4 +11,6 @@ Address >> ```<your pc ip address>:11711```
 in windows probably you need to disable firewall or setting ruls for it or etc.  
 
 # Donate
+Can help a lot thanks!  
+
 **BTC** >> ```bc1q7sdlkzns5dl45fqlsdat5vxj86xe404qnyu94l```
