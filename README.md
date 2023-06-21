@@ -1,5 +1,5 @@
 # web_transfer
-Easy way to transfer file between your devices wirelessly.
+Easy way to transfer file between your devices in a network wirelessly.
 
 # how it works?
 Think you want to transfer an image from your pc to your phone:  
@@ -7,5 +7,5 @@ run the application with ```python web_transfer.py``` then it asks for file loca
 
 Address >> ```<your pc ip address>:11711```
 
-**Note**: make sure your pc firewall or antivirus allows the connection,  
+**Note**: make sure your pc firewall or antivirus allows the connection.  
 in windows probably you need to disable firewall or setting ruls for it or etc.
