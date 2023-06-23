@@ -2,14 +2,16 @@
 Easy way to transfer file between your devices in a network wirelessly.
 
 # How it works?
-Think you want to transfer an image from your pc to your phone:  
-Run the application with ```python web_transfer.py``` then it asks for file location(here is an image) after selecting the file, you can download the image with entering below address to your phone browser, simple as that.  
-Address >> ```<your pc ip address>:11711```  
-
-And even if you don't want to install python you can download windows exe file from [here](https://github.com/boob-boob/web_transfer/releases/download/0.0.1/web_transfer_windows.exe).
+Install python if it's not.  
+Install Flask with ```pip install Flask```  
+After running ```web_transfer.py``` in ```web transfer``` folder, you can open the address program gives you in your browser.  
+SIMPLE AS THAT !  
 
 **Note**: make sure your pc firewall or antivirus allows the connection.  
 in windows probably you need to disable firewall or setting ruls for it or etc.  
+
+# Screenshot
+<img src="/img/Screenshot.png">
 
 # Donate
 Can help a lot thanks!  
