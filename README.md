@@ -4,7 +4,7 @@ Easy way to transfer file between your devices in a network wirelessly.
 # How it works?
 Install python if it's not.  
 Install Flask with ```pip install Flask```  
-After running ```web_transfer.py``` in ```web transfer``` folder, you can open the address program gives you in your browser.  
+After running ```web_transfer.py``` in ```web transfer``` folder, you can open the address program gives you in your browser and start to transfer files.  
 SIMPLE AS THAT !  
 
 **Note**: make sure your pc firewall or antivirus allows the connection.  
