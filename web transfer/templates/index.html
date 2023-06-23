@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="icon" type="image/x-icon" href="/favicon">
+    <title>Web Transfer</title>
+    <Style>
+        body{
+            margin: 0;
+            background-color: #212121;
+        }
+
+        h1 {
+            display: inline-block;
+            color: #EEEEEE;
+        }
+        
+        .button {
+        height: 20%;
+        width: 30%;
+        font-size: 28px;
+        border: none;
+        background-color: #0D7377;
+        border-radius: 8px;
+        cursor: pointer;
+        transition-duration: 0.25s;
+        }
+        
+        .button:hover{
+        background-color: #14FFEC;
+        }
+    </style>
+ </head>
+ <body>
+    <div style="height: 62vh; width: 100%; background-color: #212121;">
+        <h1 style="position: absolute; left: 13.5%;">Upload to the server</h1>
+        <h1 style="position: absolute; right: 15%;">Download from server</h1>
+        <button class="button" onclick="uploader()" type="button" style="position: absolute; left: 10%; top: 30%;">Upload</button>
+        <button class="button" onclick="download()" type="button" style="position: absolute; right: 10%; top: 18%;">Download</button>
+        <button class="button" onclick="set_file_path()" type="button" style="position: absolute; right: 10%; top: 42%;">Select the file</button>
+    </div>
+    <br><br><br><br><br>
+    <a style="font-size: 25px; color: #EEEEEE;">Notes:</a>
+    <p style="font-size: 20px; color: #EEEEEE; padding-left: 10px;">
+        1) if you want download stuff form server, at first you should open web page in the server and after selecting the file, it can be downloaded from any device in the network.<br>
+        2) when you click on "select the file" button probably file dialog will open behind your browser, look for it there.
+    </p>
+
+<script>
+function download() {
+    const link = document.createElement('a');
+    link.href = "/download";
+    if ("{{ d_path }}") {
+        link.setAttribute('download', '');
+    }
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+
+function uploader() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.onchange = async function(event) {
+        const file = event.target.files[0];
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+            const response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+            if (response.ok) {
+                alert('File uploaded successfully!');
+            } else {
+                alert('Error uploading file.');
+            }
+        } catch (error) {
+            console.error('Error uploading file:', error);
+            alert('Error uploading file.');
+        }
+    };
+    input.click();
+}
+
+
+function set_file_path() {
+    const link = document.createElement('a');
+    link.href = "/set_file_path";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+</script>
+</body>
